@@ -4,11 +4,11 @@
 
 const express = require('express');
 const app = express();
-const fruits = require('./models/fruits');
-const veggies = require('./models/veggies');
+//const fruits = require('./models/fruits');
+//const veggies = require('./models/veggies');
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Fruit = require('./models/Fruit');
+const Flight = require('./models/Flight');
 
 // -------------------------
 // Mongoose Connection Stuff
@@ -17,7 +17,7 @@ const Fruit = require('./models/Fruit');
 const mongoURI = process.env.MONGO_URI;
 db = mongoose.connection;
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
